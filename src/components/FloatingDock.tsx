@@ -1,12 +1,12 @@
 "use client";
 import { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { Download, Github, Linkedin, Mail, Code2 } from "lucide-react";
+import { Download, GitBranch, BriefcaseBusiness, Mail, Code2 } from "lucide-react";
 
 const items = [
   { label: "Resume", icon: Download, href: "/resume.pdf" },
-  { label: "GitHub", icon: Github, href: "https://github.com/dipinsaireddy329" },
-  { label: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/dipin-sai-reddy-bojjireddy-3358a92b7/" },
+  { label: "GitHub", icon: GitBranch, href: "https://github.com/dipinsaireddy329" },
+  { label: "LinkedIn", icon: BriefcaseBusiness, href: "https://www.linkedin.com/in/dipin-sai-reddy-bojjireddy-3358a92b7/" },
   { label: "LeetCode", icon: Code2, href: "https://leetcode.com/u/dipin329/" },
   { label: "Email", icon: Mail, href: "mailto:dipinsaireddy@gmail.com" },
 ];

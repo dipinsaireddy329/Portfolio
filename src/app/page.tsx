@@ -7,7 +7,7 @@ import { LinkButton } from "@/components/ui/button";
 import { ThreeHero } from "@/components/ThreeHero";
 import { FloatingDock } from "@/components/FloatingDock";
 import { TechMarquee } from "@/components/TechMarquee";
-import { certifications, profile, skillGroups, stats } from "@/content/portfolio";
+import { certifications, profile, skillGroups } from "@/content/portfolio";
 
 export default function Home() {
   return (
