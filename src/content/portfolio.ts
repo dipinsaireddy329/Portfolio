@@ -138,6 +138,6 @@ export const stats = [
 
 export const certifications: Certification[] = [
   { name: "Oracle Cloud Infrastructure (OCI) 2025 Certified AI Foundations Associate", status: "completed" },
-  { name: "AWS Certified AI Practitioner", status: "coming_soon" },
-  { name: "AWS Certified Cloud Practitioner", status: "coming_soon" }
+  { name: "AWS Certified AI Practitioner", status: "completed" },
+  { name: "AWS Certified Cloud Practitioner", status: "completed" }
 ];
