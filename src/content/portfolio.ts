@@ -18,11 +18,9 @@ export const profile = {
 };
 
 export const navItems: NavItem[] = [
-  { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
-  { label: "GitHub", href: "#github" },
   { label: "Contact", href: "#contact" }
 ];
 
@@ -139,9 +137,7 @@ export const stats = [
 ];
 
 export const certifications: Certification[] = [
-  { name: "Google Certified Cloud & AI Foundations", status: "completed" },
-  { name: "Oracle Cloud Infrastructure AI Foundations", status: "completed" },
+  { name: "Oracle Cloud Infrastructure (OCI) 2025 Certified AI Foundations Associate", status: "completed" },
   { name: "AWS Certified AI Practitioner", status: "coming_soon" },
-  { name: "AWS Certified Cloud Practitioner", status: "coming_soon" },
-  { name: "GDG Student Member", status: "completed" }
+  { name: "AWS Certified Cloud Practitioner", status: "coming_soon" }
 ];

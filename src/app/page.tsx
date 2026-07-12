@@ -1,12 +1,12 @@
 import { ArrowRight, Download, Mail, MapPin, Sparkles, Terminal, CheckCircle2, Clock } from "lucide-react";
-import dynamic from "next/dynamic";
 import { AnimatedTitle } from "@/components/AnimatedTitle";
 import { BackToTop, Chatbot, CursorGlow, LoadingScreen, Navbar, ProgressBar, SocialRail } from "@/components/ExperienceShell";
-import { GitHubPanel } from "@/components/GitHubPanel";
 import { ProjectExplorer } from "@/components/ProjectExplorer";
 import { Section } from "@/components/sections/Section";
 import { LinkButton } from "@/components/ui/button";
 import { ThreeHero } from "@/components/ThreeHero";
+import { FloatingDock } from "@/components/FloatingDock";
+import { TechMarquee } from "@/components/TechMarquee";
 import { certifications, profile, skillGroups, stats } from "@/content/portfolio";
 
 export default function Home() {
@@ -17,6 +17,7 @@ export default function Home() {
       <CursorGlow />
       <Navbar />
       <SocialRail />
+      <FloatingDock />
       <main>
         <section id="hero" className="relative flex min-h-screen items-center overflow-hidden px-5 pb-20 pt-32 sm:px-8 lg:px-10">
           <ThreeHero />
@@ -55,35 +56,10 @@ export default function Home() {
           </div>
         </section>
 
-        <Section id="about" eyebrow="Origin Story" title="A builder shaped by product thinking, AI curiosity and disciplined engineering.">
-          <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="glass rounded-[28px] p-6 md:p-8">
-              <div className="rounded-2xl border border-dashed border-white/20 p-8 text-sm text-[var(--muted)]">
-                {/* Hero Photo */}
-                Professional image slot
-              </div>
-              <div className="mt-8 space-y-5 text-base leading-8 text-[var(--muted)]">
-                <p>Dipin began with the fundamentals of computer science and kept widening the loop: web interfaces, backend APIs, Flutter mobile apps, and now applied generative AI.</p>
-                <p>His work sits at the intersection of product polish and implementation depth. ChitMaster Pro reflects offline-first mobile thinking, the AI Resume Analyzer explores LLM-assisted feedback, and his web projects focus on clear flows that can ship.</p>
-                <p>The next chapter is focused on SDE and AI Engineer roles where strong architecture, user experience and intelligent systems can meet in production.</p>
-              </div>
-            </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {stats.map(([label, value]) => (
-                <div key={label} className="glass rounded-2xl p-6">
-                  <p className="text-4xl font-semibold">{value}</p>
-                  <p className="mt-2 text-sm text-[var(--muted)]">{label}</p>
-                </div>
-              ))}
-              <div className="glass rounded-2xl p-6 sm:col-span-2">
-                <p className="text-sm text-[var(--muted)]">Education</p>
-                <p className="mt-2 text-2xl font-semibold">{profile.education}</p>
-                <p className="mt-2 text-cyan-300">CGPA {profile.cgpa}</p>
-              </div>
-            </div>
-          </div>
-        </Section>
-
+        {/* Tech stack marquee */}
+        <div className="mx-auto max-w-7xl overflow-hidden px-0 pb-4">
+          <TechMarquee />
+        </div>
         <Section id="skills" eyebrow="System Capabilities" title="A full stack skill graph designed for modern product engineering.">
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {skillGroups.map((group) => (
@@ -148,10 +124,6 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </Section>
-
-        <Section id="github" eyebrow="Open Source Surface" title="Live GitHub activity, latest repositories and language signals.">
-          <GitHubPanel />
         </Section>
 
         <Section id="coding" eyebrow="Coding Profiles" title="Competitive practice and public engineering profiles.">
