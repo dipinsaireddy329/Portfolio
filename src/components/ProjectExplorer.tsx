@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ExternalLink, GitBranch, Layers3 } from "lucide-react";
 import { useMemo, useState } from "react";
+import Image from "next/image";
 import { projects } from "@/content/portfolio";
 
 const filters = ["All", "AI", "Flutter", "React", "Next.js"];
@@ -27,7 +28,7 @@ export function ProjectExplorer() {
         {visible.map((project, index) => (
           <motion.article
             key={project.title}
-            className="glass grid gap-6 rounded-[28px] p-5 md:grid-cols-[0.85fr_1.15fr] md:p-7"
+            className="glass glow-on-hover grid gap-6 rounded-[28px] p-5 md:grid-cols-[0.85fr_1.15fr] md:p-7"
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
@@ -38,9 +39,29 @@ export function ProjectExplorer() {
                 <p className="font-mono text-xs uppercase tracking-[0.24em] text-cyan-300">{project.subtitle}</p>
                 <h3 className="mt-4 text-3xl font-semibold">{project.title}</h3>
               </div>
-              <div className="rounded-xl border border-dashed border-white/20 p-5 text-sm text-[var(--muted)]">
-                {/* {project.galleryComment} */}
-                {project.galleryComment} image slot
+              <div className="gradient-border-wrapper mt-6 relative w-full overflow-hidden rounded-xl border border-white/10 aspect-[16/10] group/img bg-black/40 shadow-inner">
+                {project.image ? (
+                  <>
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover transition-transform duration-700 ease-out group-hover/img:scale-105"
+                    />
+                    <div className="absolute inset-0 shadow-[inset_0_0_30px_rgba(0,0,0,0.6)] pointer-events-none" />
+                    <div className="absolute inset-0 bg-black/30 opacity-0 group-hover/img:opacity-100 transition-opacity duration-500 backdrop-blur-md flex items-center justify-center z-10">
+                      <span className="rounded-full bg-white/10 border border-white/20 px-6 py-2 text-sm font-semibold shadow-2xl backdrop-blur-xl text-white">
+                        {project.title}
+                      </span>
+                    </div>
+                  </>
+                ) : (
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <Layers3 size={32} className="text-white/10 mb-3" />
+                    <span className="text-sm text-[var(--muted)]">{project.galleryComment}</span>
+                  </div>
+                )}
               </div>
             </div>
             <div className="space-y-5">

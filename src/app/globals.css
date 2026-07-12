@@ -94,3 +94,50 @@ textarea {
 .focus-ring:focus-visible {
   box-shadow: 0 0 0 3px rgba(104, 225, 253, 0.42);
 }
+
+@keyframes float-lift {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-float {
+  animation: float-lift 6s ease-in-out infinite;
+}
+
+@keyframes gradient-border {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-border-wrapper {
+  position: relative;
+  background: transparent;
+}
+
+.gradient-border-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: -1.5px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3), var(--accent));
+  background-size: 300% 300%;
+  animation: gradient-border 4s ease infinite;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.gradient-border-wrapper:hover::before {
+  opacity: 1;
+}
+
+.glow-on-hover {
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.glow-on-hover:hover {
+  box-shadow: 0 0 24px 0 rgba(104, 225, 253, 0.35);
+  transform: translateY(-4px);
+}

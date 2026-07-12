@@ -18,6 +18,7 @@ export type Project = {
   github?: string;
   live?: string;
   galleryComment: string;
+  image?: string;
 };
 
 export type NavItem = {
@@ -29,4 +30,9 @@ export type SocialLink = {
   label: string;
   href: string;
   icon: LucideIcon;
+};
+
+export type Certification = {
+  name: string;
+  status: "completed" | "coming_soon";
 };

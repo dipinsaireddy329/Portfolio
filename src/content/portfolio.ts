@@ -1,5 +1,5 @@
 import { BriefcaseBusiness, Code2, GitBranch } from "lucide-react";
-import type { NavItem, Project, SkillGroup, SocialLink } from "@/types";
+import type { NavItem, Project, SkillGroup, SocialLink, Certification } from "@/types";
 
 export const profile = {
   name: "Dipin Sai Reddy Bojjireddy",
@@ -47,17 +47,18 @@ export const skillGroups: SkillGroup[] = [
 
 export const projects: Project[] = [
   {
-    title: "ChitMaster Pro",
-    subtitle: "Offline Flutter FinTech Platform",
-    problem: "Chit fund operators need a dependable way to manage groups, members and payment records even when connectivity is unreliable.",
-    solution: "A Flutter platform designed around offline-first flows, local persistence and clear financial operations that keep daily work fast and auditable.",
-    challenge: "The hard part is making financial state feel simple while preserving consistency, validation and recovery paths for real-world usage.",
-    architecture: ["Flutter presentation layer", "Hive local storage", "Riverpod state graph", "GoRouter navigation", "Export-ready domain models"],
-    tech: ["Flutter", "Dart", "Riverpod", "Hive", "GoRouter", "Vercel"],
-    timeline: "Built as a product-style FinTech case study",
-    github: "https://github.com/dipinsaireddy329/chit-master",
-    live: "https://chit-master-sigma.vercel.app",
-    galleryComment: "ChitMaster Dashboard"
+    title: "Smart Expense Tracker",
+    subtitle: "Personal finance with clean decision loops",
+    problem: "Expense tools often collect data but fail to make the next financial decision obvious.",
+    solution: "A focused tracker that organizes spending, highlights patterns and keeps the interface calm enough for frequent use.",
+    challenge: "The interface needs to balance density and clarity so users can scan numbers quickly without feeling buried in charts.",
+    architecture: ["Transaction model", "Category engine", "Dashboard metrics", "Responsive web UI", "Deployment pipeline"],
+    tech: ["React", "JavaScript", "CSS", "Vercel"],
+    timeline: "Shipped web application",
+    github: "https://github.com/dipinsaireddy329/smart-expense-tracker",
+    live: "https://smart-expense-tracker-dipin.vercel.app",
+    galleryComment: "Expense Tracker Dashboard",
+    image: "/images/smart-expense-tracker.png"
   },
   {
     title: "AI Resume Analyzer",
@@ -69,20 +70,36 @@ export const projects: Project[] = [
     tech: ["Python", "LLMs", "Prompt Engineering", "React", "FastAPI"],
     timeline: "AI product prototype",
     github: "https://github.com/dipinsaireddy329/ai-resume-analyzer",
-    galleryComment: "Resume Analyzer"
+    galleryComment: "Resume Analyzer",
+    image: "/images/ai-resume-analyzer.png"
   },
   {
-    title: "Smart Expense Tracker",
-    subtitle: "Personal finance with clean decision loops",
-    problem: "Expense tools often collect data but fail to make the next financial decision obvious.",
-    solution: "A focused tracker that organizes spending, highlights patterns and keeps the interface calm enough for frequent use.",
-    challenge: "The interface needs to balance density and clarity so users can scan numbers quickly without feeling buried in charts.",
-    architecture: ["Transaction model", "Category engine", "Dashboard metrics", "Responsive web UI", "Deployment pipeline"],
-    tech: ["React", "JavaScript", "CSS", "Vercel"],
-    timeline: "Shipped web application",
-    github: "https://github.com/dipinsaireddy329/smart-expense-tracker",
-    live: "https://smart-expense-tracker-dipin.vercel.app",
-    galleryComment: "Expense Tracker Dashboard"
+    title: "ChitMaster Pro",
+    subtitle: "Offline Flutter FinTech Platform",
+    problem: "Chit fund operators need a dependable way to manage groups, members and payment records even when connectivity is unreliable.",
+    solution: "A Flutter platform designed around offline-first flows, local persistence and clear financial operations that keep daily work fast and auditable.",
+    challenge: "The hard part is making financial state feel simple while preserving consistency, validation and recovery paths for real-world usage.",
+    architecture: ["Flutter presentation layer", "Hive local storage", "Riverpod state graph", "GoRouter navigation", "Export-ready domain models"],
+    tech: ["Flutter", "Dart", "Riverpod", "Hive", "GoRouter", "Vercel"],
+    timeline: "Built as a product-style FinTech case study",
+    github: "https://github.com/dipinsaireddy329/chit-master",
+    live: "https://chit-master-sigma.vercel.app",
+    galleryComment: "ChitMaster Dashboard",
+    image: "/images/chit-master-pro.png"
+  },
+  {
+    title: "Stock Trading App",
+    subtitle: "Real-time market simulator",
+    problem: "Beginning traders need a risk-free environment to practice strategies with live market data without risking real capital.",
+    solution: "A full-featured virtual trading platform featuring real-time price tracking, interactive charts, and instant buy/sell execution.",
+    challenge: "Managing real-time WebSockets connections reliably while ensuring user balance updates remain strictly transaction-safe across Mongo transactions.",
+    architecture: ["Real-time stock dashboard", "Interactive price charts", "Portfolio management", "Buy & Sell simulation", "Market watchlist", "Responsive UI"],
+    tech: ["React", "Node.js", "Express", "MongoDB"],
+    timeline: "Production-grade MERN application",
+    github: "https://github.com/dipinsaireddy329/STOCK-TRADING-APP",
+    live: "https://stock-trading-app-djk.vercel.app/",
+    galleryComment: "Stock Trading Dashboard",
+    image: "/images/stock-trading-app.png"
   },
   {
     title: "Advanced CGPA Calculator",
@@ -90,23 +107,27 @@ export const projects: Project[] = [
     problem: "Students need a fast way to model semester performance and understand how each grade affects cumulative outcomes.",
     solution: "A polished calculator for CGPA planning, designed around accuracy, quick input and clean result presentation.",
     challenge: "The product depends on trust, so input behavior, edge cases and calculation clarity matter more than decorative complexity.",
-    architecture: ["Course input system", "Grade mapping", "Weighted aggregation", "Result state", "Static deployment"],
+    architecture: ["Semester-wise GPA", "Overall CGPA", "Clean responsive UI", "Fast calculations", "Student friendly"],
     tech: ["React", "JavaScript", "HTML", "CSS", "Vercel"],
     timeline: "Academic utility shipped live",
     github: "https://github.com/dipinsaireddy329/cgpa-calculator",
     live: "https://cgpa-calculator-seven-omega.vercel.app/",
-    galleryComment: "CGPA Calculator"
+    galleryComment: "CGPA Calculator",
+    image: "/images/cgpa-calculator.png"
   },
   {
-    title: "Portfolio Website",
-    subtitle: "This digital engineering experience",
-    problem: "A normal portfolio lists work. This site needed to make recruiters feel the craft, systems thinking and product taste behind the work.",
-    solution: "A Next.js 15 experience with motion, 3D ambience, structured content, keyboard navigation, RAG-ready assistant and deployment-grade SEO.",
-    challenge: "The challenge is restraint: every animation has to support exploration instead of becoming a distraction.",
-    architecture: ["Next.js App Router", "Static content layer", "Client interaction islands", "RAG-ready assistant module", "Metadata and schema layer"],
-    tech: ["Next.js 15", "React 19", "TypeScript", "TailwindCSS", "Framer Motion", "Three.js"],
-    timeline: "Built as a premium portfolio system",
-    galleryComment: "Hero Photo"
+    title: "E-Commerce Platform",
+    subtitle: "Scalable digital commerce engine",
+    problem: "Modern shoppers expect sub-second catalog loads, secure checkout, and immediate order feedback in a highly responsive UI.",
+    solution: "A complete MERN shopping application featuring secure JWT authentication, dynamic cart operations, and administrative controls.",
+    challenge: "Implementing high-performance product sorting and query indexing to maintain low-latency catalog fetches under high volume.",
+    architecture: ["Authentication", "Product Listing", "Shopping Cart", "Checkout UI", "Order Tracking", "Admin Dashboard", "Responsive Design"],
+    tech: ["React", "Node.js", "Express", "MongoDB"],
+    timeline: "Full-scale commerce application",
+    github: "https://github.com/dipinsaireddy329/E-Commerce-Platform",
+    live: "https://e-commerce-platform-dipin.vercel.app/",
+    galleryComment: "E-Commerce Home",
+    image: "/images/e-commerce-platform.png"
   }
 ];
 
@@ -117,9 +138,10 @@ export const stats = [
   ["Years Learning", "3+"]
 ];
 
-export const certifications = [
-  "Oracle Cloud Infrastructure AI Foundations",
-  "AWS Certified AI Practitioner - Coming Soon",
-  "AWS Certified Cloud Practitioner - Coming Soon",
-  "GDG Student Member"
+export const certifications: Certification[] = [
+  { name: "Google Certified Cloud & AI Foundations", status: "completed" },
+  { name: "Oracle Cloud Infrastructure AI Foundations", status: "completed" },
+  { name: "AWS Certified AI Practitioner", status: "coming_soon" },
+  { name: "AWS Certified Cloud Practitioner", status: "coming_soon" },
+  { name: "GDG Student Member", status: "completed" }
 ];

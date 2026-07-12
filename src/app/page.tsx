@@ -1,4 +1,5 @@
-import { ArrowRight, Download, Mail, MapPin, Sparkles, Terminal } from "lucide-react";
+import { ArrowRight, Download, Mail, MapPin, Sparkles, Terminal, CheckCircle2, Clock } from "lucide-react";
+import dynamic from "next/dynamic";
 import { AnimatedTitle } from "@/components/AnimatedTitle";
 import { BackToTop, Chatbot, CursorGlow, LoadingScreen, Navbar, ProgressBar, SocialRail } from "@/components/ExperienceShell";
 import { GitHubPanel } from "@/components/GitHubPanel";
@@ -130,7 +131,21 @@ export default function Home() {
         <Section id="certifications" eyebrow="Signals" title="Certifications and communities that reflect the AI and cloud direction.">
           <div className="grid gap-3 md:grid-cols-2">
             {certifications.map((item) => (
-              <div key={item} className="glass rounded-2xl p-5 text-sm">{item}</div>
+              <div key={item.name} className="glass rounded-2xl p-5 flex items-center justify-between gap-4 transition-colors hover:bg-white/10">
+                <div className="flex items-center gap-3">
+                  {item.status === "completed" ? (
+                    <CheckCircle2 size={18} className="text-cyan-300 shrink-0" />
+                  ) : (
+                    <Clock size={18} className="text-[var(--muted)] shrink-0" />
+                  )}
+                  <span className={`text-sm ${item.status === "completed" ? "text-[var(--foreground)] font-medium" : "text-[var(--muted)]"}`}>
+                    {item.name}
+                  </span>
+                </div>
+                <span className={`text-xs whitespace-nowrap rounded-full px-3 py-1 border ${item.status === "completed" ? "border-cyan-300/30 bg-cyan-300/10 text-cyan-300" : "border-white/10 bg-white/5 text-[var(--muted)]"}`}>
+                  {item.status === "completed" ? "Completed" : "Coming Soon"}
+                </span>
+              </div>
             ))}
           </div>
         </Section>
